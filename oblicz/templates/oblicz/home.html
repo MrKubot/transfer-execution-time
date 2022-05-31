@@ -1,0 +1,35 @@
+{% extends 'oblicz/base.html' %}
+
+{% block body %}
+
+    <div class="jumbotron d-flex justify-content-center">
+        <form method="post" class="form" action="/przyblizona-godzina/">
+            
+            <label>Your bank: </label>
+            <select id="bank1">
+                {% for bank in banki %}
+                    <option value="{{bank.nazwa_banku}}">{{bank.nazwa_banku}}</option>
+                {% endfor %}
+            </select>
+
+            <br>
+
+            <label>Destination: </label>
+            <select id="bank2">
+                {% for bank in banki %}
+                <option value="{{bank.nazwa_banku}}">{{bank.nazwa_banku}}</option>
+                {% endfor %}
+            </select>
+
+            <br>
+
+            <label>Date and time: </label>
+            <input type="datetime-local" id="data">
+
+            <br>
+
+            <button type="submit" name="sprawdz" class="btn btn-success">Check</button>
+        </form>
+    </div>
+
+{% endblock %}
