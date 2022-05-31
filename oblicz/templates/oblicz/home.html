@@ -3,10 +3,12 @@
 {% block body %}
 
     <div class="jumbotron d-flex justify-content-center">
-        <form method="post" class="form" action="/przyblizona-godzina/">
+        <form method="post" class="form" action="przyblizona/">
+
+            {% csrf_token %}
             
             <label>Your bank: </label>
-            <select id="bank1">
+            <select name="bank1">
                 {% for bank in banki %}
                     <option value="{{bank.nazwa_banku}}">{{bank.nazwa_banku}}</option>
                 {% endfor %}
@@ -15,7 +17,7 @@
             <br>
 
             <label>Destination: </label>
-            <select id="bank2">
+            <select name="bank2">
                 {% for bank in banki %}
                 <option value="{{bank.nazwa_banku}}">{{bank.nazwa_banku}}</option>
                 {% endfor %}
@@ -24,7 +26,7 @@
             <br>
 
             <label>Date and time: </label>
-            <input type="datetime-local" id="data">
+            <input type="datetime-local" name="data">
 
             <br>
 

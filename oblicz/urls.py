@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns =[
     path('', views.home, name='home'),
-    path('przyblizona-godzina', views.godzina, name='godzina'),
+    path('przyblizona/', views.godzina, name='godzina'),
     
 ]
