@@ -100,35 +100,24 @@ def oblicz_kiedy_dotrze(data_obiekt, dane):
 
     dni_wolne, rok = jakie_dni_wolne()
 
+    months_dict = {
+        'stycznia': 1,
+        'lutego': 2,
+        'marca': 3,
+        'kwietnia': 4,
+        'maja': 5,
+        'czerwca': 6,
+        'lipca': 7,
+        'sierpnia': 8,
+        'września': 9,
+        'października': 10,
+        'listopada': 11,
+        'grudnia': 12,
+    }
     dni_wolne_objects = []
     miesiac = 1
     for dzien_tuple in dni_wolne:
-        match dzien_tuple[1]:
-            case 'stycznia':
-                miesiac = 1
-            case 'lutego':
-                miesiac = 2
-            case 'marca':
-                miesiac = 3
-            case 'kwietnia':
-                miesiac = 4
-            case 'maja':
-                miesiac = 5
-            case 'czerwca':
-                miesiac = 6
-            case 'lipca':
-                miesiac = 7
-            case 'sierpnia':
-                miesiac = 8
-            case 'września':
-                miesiac = 9
-            case 'października':
-                miesiac = 10
-            case 'listopada':
-                miesiac = 11
-            case 'grudnia':
-                miesiac = 12
-
+        miesiac = months_dict[dzien_tuple[1]]
         dni_wolne_objects.append(datetime.date(rok, miesiac, int(dzien_tuple[0])))
 
 
